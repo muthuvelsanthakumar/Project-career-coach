@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Pure HTML & CSS Timeline" name="keywords">
+        <meta content="Pure HTML & CSS Timeline" name="description">
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Stylesheet -->
+        <link href="../css/rstyle.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<title>Todo
+  
+  -aws</title>
+<link rel="icon" type="image/x-icon" href="../img/3-removebg-preview.png">
+</head>
+
+<style>
+
+.todo {
+  background-color: rgb(48, 48, 48) !important;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-app {
+  width: 800px;
+  height: 600px;
+  border-radius: 15px;
+  margin: 80px 0px;
+}
+.input-section {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  height: 30px;
+}
+.input-section input[type="text"] {
+  flex-grow: 1;
+  padding: 16px;
+  border: none;
+  background-color: rgb(33, 33, 33);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  -webkit-box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+  box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+}
+.input-section input[type="text"]::placeholder {
+  color: #ddd;
+}
+.input-section input[type="text"]:focus {
+  outline: none;
+  background-color: #555;
+}
+.input-section button {
+  margin-left: 10px;
+  padding: 16px 23px;
+  border: none;
+  background-color: rgb(33, 33, 33);
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  -webkit-box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+  box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+}
+.input-section button:hover {
+  outline: none;
+  background-color: #555;
+}
+.input-section button[type="text"]::placeholder {
+  color: #ddd;
+}
+.add {
+  margin-right: 10px;
+}
+.todos {
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+  padding: 10px 5px;
+  background-color: rgb(33, 33, 33);
+  border-radius: 30px;
+  -webkit-box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+  box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+}
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 7px 30px;
+  background-color: rgb(38 37 37);
+  border-radius: 80px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.todo-list li span {
+  margin-left: 10px;
+  color: #fff;
+  /* font-size: 13px */
+}
+.delete-button {
+  padding: 3px;
+  border-radius: 80px;
+}
+.delete-button :hover {
+  outline: none;
+  background-color: #555;
+}
+.todo-text {
+  color: #fff !important;
+  margin-right: auto;
+  font-size: 16px !important;
+}
+.span-button {
+  margin-left: auto;
+  display: block;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px !important;
+
+}
+.span-button:hover {
+  background-color: rgb(52, 53, 53);
+  border-radius: 80px;
+  /* padding: 4px 6px; */
+  color: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+.face {
+  width: 100px;
+  z-index: 100;
+  height: 100px;
+  /* margin: auto; */
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 30%;
+}
+.not-found{
+  color: #fff;
+  top: 60%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 30%;
+}
+
+</style>
+
+
+
+<body style="background-color:rgb(52, 53, 53)">
+<div class="navbar">
+  <a href="../mainpages/index1.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Roadmap
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <div class="header">
+        <h2>Domain</h2>
+      </div>   
+      <div class="row">
+        <div class="column">
+          
+          <a href="../roadmaps/fd.html">Frontend</a>
+          <a href="../roadmaps/bd.html">Backend</a>
+          <a href="../roadmaps/fs.html">Fullstack</a>
+        </div>
+        <div class="column">
+         
+          <a href="../roadmaps/da.html">Data Analytics</a>
+          <a href="../roadmaps/ba.html">Buisness Analyst</a>
+          <a href="../roadmaps/ml.html">Machine Learning</a>
+        </div>
+        <div class="column">
+        
+          <a href="../roadmaps/aws.html">AWS Cloud</a>
+          <a href="../roadmaps/ds.html">Data Science</a>
+          <a href="../roadmaps/dps.html">Devops</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Course
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <div class="header">
+        <h2>Languages</h2>
+      </div>   
+      <div class="row">
+        <div class="column">
+          
+          <a href="../courses/html.html">HTML</a>
+          <a href="../courses/css.html">CSS</a>
+          <a href="../courses/js.html">Javascript</a>
+        </div>
+        <div class="column">
+   
+          <a href="../courses/restapi.html">Rest API</a>
+          <a href="../courses/jquery.html">Jquery</a>
+          <a href="../courses/bootstrap.html">Bootstrap</a>
+        </div>
+        <div class="column">
+       
+          <a href="../courses/python.html">Python</a>
+          <a href="../courses/django.html">Django</a>
+          <a href="../courses/mysql.html">My SQL</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <a href="../mainpages/about.html">About</a>
+<a href="../mainpages/contact.html">Contact</a>
+<a href="../mainpages/todolist.html">Scheduler</a>
+<a href="../jyo/templates/chat.html">Jyo</a>
+<a href="../login/login/index.html" style="float: right; size: 25px;"><i class="fa fa-fw fa-user"></i></a>
+</div>
+<br><br>
+
+  <!--  TODO list Contents  Section --> 
+
+  
+    <div class="todo">
+     <div class="todo-app">
+       <form class="input-section">
+         <input id="todoInput" type="text" placeholder="Add item..." />
+         <button id="addBtn" type="submit" class="add">Add</button>
+         <button
+           type="button"
+           class="add"
+           id="update-button"
+           style="display: none"
+         >
+           Update
+         </button>
+         <input type="text" id="search-input" placeholder="Search" />
+         <button type="button" id="search-button">Search</button>
+       </form>
+       <div class="todos">
+         <ul class="todo-list">
+           <li class="li">
+           <input class="form-check-input" type="checkbox" value="option1">
+           <label class="form-check-label" for="inlineCheckbox1"></label>
+           <span class="todo-text">text</span>
+           <span class="todo-text">date</span>
+           <span class="span-button"><i class="fa-regular fa-trash-can"></i></span>
+           <span class="span-button"><i class="fa-duotone fa-pen-to-square"></i></span>
+         </li> 
+         </ul>
+               
+        
+       </div>
+     </div>
+    </div>
+
+ 
+
+<!-- End of TODO List Contents  Section --> 
+
+</body>
+</html>
+
+<script>
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+let editIndex = -1;
+const todoForm = document.querySelector(".input-section");
+const todoInput = document.querySelector("#todoInput");
+const todoList = document.querySelector(".todo-list");
+const addButton = document.querySelector("#addBtn");
+const updateButton = document.getElementById("update-button");
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+const todo_main = document.querySelector(".todos");
+
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function renderTodos() {
+  todoList.innerHTML = "";
+
+  todos.forEach((todo, index) => {
+    const li = document.createElement("li");
+    li.className = "li";
+
+    const checkbox = document.createElement("input");
+    checkbox.className = "form-check-input";
+    checkbox.type = "checkbox";
+    checkbox.value = "option1";
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener("change", () => toggleTodoCompleted(index));
+
+    const label = document.createElement("label");
+    label.className = "form-check-label";
+
+    const spanText = document.createElement("span");
+    spanText.className = "todo-text";
+    spanText.textContent = `${todo.text} (${todo.date})`;
+
+    const deleteButton = document.createElement("span");
+    deleteButton.className = "span-button";
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteButton.addEventListener("click", () => deleteTodo(index));
+
+    const editButton = document.createElement("span");
+    editButton.className = "span-button";
+    editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
+    editButton.addEventListener("click", () => editTodo(index));
+
+    li.appendChild(checkbox);
+    li.appendChild(label);
+    li.appendChild(spanText);
+    li.appendChild(deleteButton);
+    li.appendChild(editButton);
+
+    todoList.appendChild(li);
+  });
+}
+function addTodo() {
+  const todoText = todoInput.value.trim();
+
+  if (todoText !== "") {
+    const currentDate = new Date();
+
+    if (editIndex === -1) {
+      todos.push({
+        text: todoText,
+        completed: false,
+        date: currentDate.toLocaleString(),
+      });
+    } else {
+      todos[editIndex].text = todoText;
+      todos[editIndex].date = currentDate.toLocaleString();
+      editIndex = -1;
+      addButton.style.display = "inline";
+      updateButton.style.display = "none";
+    }
+
+    saveTodos();
+    renderTodos();
+    todoInput.value = "";
+  }
+
+  return false;
+}
+
+function toggleTodoCompleted(index) {
+  todos[index].completed = !todos[index].completed;
+  saveTodos();
+  renderTodos();
+}
+
+function deleteTodo(index) {
+  todos.splice(index, 1);
+  saveTodos();
+  renderTodos();
+}
+
+function editTodo(index) {
+  const todoText = todos[index].text;
+  todoInput.value = todoText;
+  editIndex = index;
+  addButton.style.display = "none";
+  updateButton.style.display = "inline";
+}
+
+function searchTodo() {
+  const searchQuery = searchInput.value.trim();
+  if (searchQuery !== "") {
+    const searchResults = todos.filter((todo) =>
+      todo.text.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    renderSearchResults(searchResults);
+  } else {
+    renderTodos();
+  }
+}
+
+function renderSearchResults(results) {
+  todoList.innerHTML = "";
+
+  if (results.length > 0) {
+    results.forEach((todo, index) => {
+      const li = document.createElement("li");
+      li.className = "li";
+
+      const checkbox = document.createElement("input");
+      checkbox.className = "form-check-input";
+      checkbox.type = "checkbox";
+      checkbox.value = "option1";
+      checkbox.checked = todo.completed;
+      checkbox.addEventListener("change", () => toggleTodoCompleted(index));
+
+      const label = document.createElement("label");
+      label.className = "form-check-label";
+
+      const spanText = document.createElement("span");
+      spanText.className = "todo-text";
+      spanText.textContent = `${todo.text} (${todo.date})`;
+
+      const deleteButton = document.createElement("span");
+      deleteButton.className = "span-button";
+      deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+      deleteButton.addEventListener("click", () => deleteTodo(index));
+
+      const editButton = document.createElement("span");
+      editButton.className = "span-button";
+      editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      editButton.addEventListener("click", () => editTodo(index));
+
+      li.appendChild(checkbox);
+      li.appendChild(label);
+      li.appendChild(spanText);
+      li.appendChild(deleteButton);
+      li.appendChild(editButton);
+
+      todoList.appendChild(li);
+    });
+  } else {
+    todo_main.innerHTML = `<img class="face" src="asetes/thinking.png" alt="">
+                            <h1 class="not-found"> NOT FOUND</h1>`;
+  }
+}
+
+todoForm.addEventListener("submit", addTodo);
+updateButton.addEventListener("click", addTodo);
+searchButton.addEventListener("click", searchTodo);
+renderTodos();
+
+</script>

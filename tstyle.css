@@ -1,0 +1,521 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik+Vinyl&display=swap');
+   
+
+.todo 
+{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    font-family: 'Belanosima', sans-serif;
+    overflow: auto;
+    background-color: rgb(18, 18, 18);
+    transition: all 0.35s;
+    flex-direction: column;
+}
+.body-header
+{
+    margin: auto;
+    height: 10%;
+    width: 90%;
+    display: flex;
+}
+.body-footer
+{
+    margin: auto;
+    height: 10%;
+    width: 90%;
+    display: flex;
+}
+.darksoul-toggle-container
+{
+    width: 300px;
+    height: 130px;
+    margin: auto;
+    margin-right: 1px;
+    display: flex;
+    border-radius: 70px;
+    padding: 2px;
+    box-shadow: 10px 10px 10px rgba(16, 16, 16, 0.667), 0px -8px 10px rgba(32, 32, 32, 0.453), -5px -5px 15px rgb(17, 17, 17) inset, 15px 15px 50px rgb(26, 26, 26) inset;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    zoom: 0.2;
+}
+.darksoul-toggle-border
+{
+    width: 300px;
+    height: 130px;
+    background-color: rgb(23, 23, 23);
+    box-shadow: 5px 5px 10px rgb(23, 23, 23) inset, -4px -10px 10px rgb(25, 25, 25) inset;
+    border-radius: 70px;
+    margin: auto;
+    display: flex;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+.darksoul-toggle
+{
+    margin: auto;
+    margin-left: 15px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(23, 23, 23);
+    border: 1px solid rgba(28, 28, 28, 0);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.312), -10px -10px 10px rgba(30, 30, 30, 0.696), 35px -1px 5px rgb(255, 255, 255) inset,  -2px 5px 10px rgba(23, 23, 23, 0.986) inset;
+    border-radius: 50%;
+    transition: box-shadow 1s;
+}
+.darksoul-toggle:hover
+{
+    cursor: pointer;
+ 
+}
+@keyframes roll 
+{
+    100%
+    {
+        transform: translateX(170px) rotate(360deg);
+    }
+}
+@keyframes rollback 
+{ 
+    0%
+    {
+        transform: translateX(170px) rotate(360deg);
+    }
+    100%
+    {
+        transform: translateX(0px) rotate(0deg);
+    }
+}
+.darksoul-kanban-board
+{
+    margin: auto;
+    width: 65%;
+    height: 80%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.col
+{
+    margin: auto;
+    width: 333px;
+    height: 92%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.heading
+{
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    display: flex;
+}
+.heading h4
+{
+    margin: auto;
+    margin-left: 1px;
+    color: #ffffff;
+}
+.heading img
+{
+    margin: auto;
+    margin-right: 1px;
+    cursor: pointer;
+}
+.heading img:hover
+{
+    transform: scale(1.05);
+}
+.wrapper
+{
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+}
+.darksoul-gradient-card-purple
+{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+    min-height: 180px;
+    background: linear-gradient(var(--gradient-angle),rgb(0, 0, 0), rgb(191, 191, 252));
+    border-radius: 15px;
+    animation: rotation 5s linear 0s infinite normal forwards;
+    backdrop-filter: blur(50px);
+    transition: all 1s;
+}
+.darksoul-gradient-card-grey
+{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+    min-height: 180px;
+    background: linear-gradient(var(--gradient-angle),rgb(0, 0, 0), rgb(223, 223, 223));
+    border-radius: 15px;
+    animation: rotation 5s linear 0s infinite normal forwards;
+    backdrop-filter: blur(50px);
+    transition: all 1s;
+}
+.darksoul-gradient-card-blue
+{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+    min-height: 180px;
+    background: linear-gradient(var(--gradient-angle),rgb(0, 0, 0), rgb(191, 211, 252));
+    border-radius: 15px;
+    animation: rotation 5s linear 0s infinite normal forwards;
+    backdrop-filter: blur(50px);
+    transition: all 1s;
+}
+.darksoul-gradient-card-green
+{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+    min-height: 180px;
+    background: linear-gradient(var(--gradient-angle),rgb(0, 0, 0), rgb(207, 242, 165));
+    border-radius: 15px;
+    animation: rotation 5s linear 0s infinite normal forwards;
+    backdrop-filter: blur(50px);
+    transition: all 1s;
+}
+.card
+{
+    margin: auto;
+    width: 99%;
+    min-height: 175px;
+    background-color: rgba(0, 0, 0, 0.852);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 13px;
+    cursor: pointer;
+}
+.darksoul-gradient-card-purple:hover, .darksoul-gradient-card-grey:hover, .darksoul-gradient-card-blue:hover, .darksoul-gradient-card-green:hover
+{
+    transform: scale(0.98);
+
+}
+.header
+{
+    margin: auto;
+    width: 90%;
+    height: 25%;
+    display: flex;
+}
+.header h5
+{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+    margin-left: 1px;
+    margin-top: 15px;
+    font-family: 'Belanosima', sans-serif;
+}
+.content
+{
+    margin: auto;
+    width: 90%;
+    height: 50%;
+}
+.content h3
+{
+    width: 100%;
+    font-weight: 500;
+    font-weight: 700;
+}
+.content p 
+{
+    margin: auto;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.footer
+{
+    margin: auto;
+    width: 95%;
+    height: 25%;
+    display: flex;
+    margin-bottom: 7px;
+}
+.date
+{
+    margin: auto;
+    margin-left: 0.1px;
+    display: flex;
+}
+.footer img
+{
+    margin: auto;
+    margin-left: 1px;
+ 
+}
+.footer p
+{
+    margin: auto;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+
+/* Modals - Start */
+#darksoul-modal
+{
+    display: none;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.652);
+    position: fixed;
+}
+.darksoul-modal-content
+{
+    background-color: rgb(21, 21, 21);
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 350px;
+    min-height: 300px;
+    max-width: 700px;
+    color: white;
+}
+.modal-close-btn
+{
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0px;
+    background-size: contain;
+    background-image: url("https://img.icons8.com/external-creatype-glyph-colourcreatype/64/ffffff/external-close-essential-ui-v4-creatype-glyph-colourcreatype.png");
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.darksoul-modal-content-header
+{
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Belanosima', sans-serif;
+}
+.color-picker 
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+}
+.color-picker:hover
+{
+    transform: scale(1.05);
+}
+.purple
+{
+    background-color: rgb(191, 191, 252);
+    color: rgb(68, 68, 111);
+    box-shadow: 0px 0px 20px rgb(191, 191, 252);
+}
+.grey
+{
+    background-color: rgb(223, 223, 223);
+    color: rgb(84, 84, 84);
+    box-shadow: 1px 1px 20px rgb(223, 223, 223);
+}
+.green
+{
+    background-color: rgb(207, 242, 165);
+    color: rgb(93, 127, 53);
+    box-shadow: 1px 1px 20px rgb(207, 242, 165);
+}
+.blue
+{
+    background-color: rgb(191, 211, 252);
+    color: rgb(70, 98, 154);
+    box-shadow: 1px 1px 20px rgb(191, 211, 252);
+}
+.darksoul-modal-content-main
+{
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+}
+.darksoul-form
+{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+}
+label
+{
+    margin: auto;
+    margin-left: 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+input
+{
+    margin: auto;
+    height: 40px;
+    width: 95%;
+    margin-left: 1px;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    padding-left: 10px;
+    font-size: medium;
+    box-shadow: 0.1px 0.1px 3px rgb(138, 138, 255) inset;
+    font-family: 'Belanosima', sans-serif;
+    background-color: white;
+}
+input:focus
+{
+    border: 2px solid rgb(168, 168, 254);
+}
+textarea
+{
+    margin: auto;
+    height: 150px;
+    width: 95%;
+    resize: vertical;
+    margin-left: 1px;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: medium;
+    box-shadow: 0.1px 0.1px 3px rgb(138, 138, 255) inset;
+    font-family: 'Belanosima', sans-serif;
+}
+textarea:focus
+{
+    border: 2px solid rgb(168, 168, 254);
+}
+.darksoul-modal-content-footer
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    margin-top: 10px;
+}
+
+/* Modals - End */
+
+/* width */
+::-webkit-scrollbar 
+{
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track 
+{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb 
+{
+background: #ffffff;
+border-radius: 10px;
+height: 10px;
+width: 3px;
+}
+
+.darksoul-glowing-button2
+{
+    margin: auto;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    border-radius: 35px;
+    animation: rotation 3s linear 0s infinite;
+    background: linear-gradient(var(--gradient-angle), rgb(255, 255, 255), rgba(0, 0, 0, 0));
+}
+.darksoul-button2
+{
+    width: 97%;
+    height: 93%;
+    background-color: rgba(0, 0, 0, 0.911);
+    margin: auto;
+    outline: none;
+    border: none;
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-family: 'Belanosima', sans-serif;
+    cursor: pointer;
+}
+@keyframes rotation 
+{
+    0%
+    {
+        --gradient-angle: 0deg;
+    }
+    100%
+    {
+        --gradient-angle: 360deg;
+    }    
+}
+@property --gradient-angle
+{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@media only screen and (max-width: 600px) 
+{
+    body 
+    {
+        overflow-y: auto;
+    }
+.darksoul-kanban-board
+{
+    margin: auto;
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.darksoul-modal-content
+{
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    min-height: 300px;
+}
+}
+.disclaimer
+{
+    margin: auto;
+    width: fit-content;
+    color: #6a6a6a;
+    font-weight: 500;
+    text-align: center;
+}
+.disclaimer a
+{
+    text-decoration: none;
+    color: white;
+}
+.disclaimer a:hover
+{
+    font-weight: bolder;
+}
